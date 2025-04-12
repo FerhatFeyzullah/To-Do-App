@@ -63,10 +63,16 @@ function createItem(text) {
     const a = document.createElement('a');
     a.classList = 'delete-item text-danger';
     a.setAttribute('href', '#');
-    a.innerHTML = '<i class="fas fa-times"></i>'
+    a.innerHTML = '<i class="fas fa-times"></i>';
 
+    const div = document.createElement('div');
+    div.className = 'd-flex align-items-center';
+    div.innerHTML = 'Yapildi <input type="checkbox" class="me-3 ms-3"></input>';
+
+
+    div.appendChild(a)
     // Add a to li
-    li.appendChild(a);
+    li.appendChild(div);
     // Add li to ul
     taskList.appendChild(li);
 }
@@ -91,9 +97,9 @@ function addNewItem(e) {
 //Delete an item
 function deleteItem(e) {
     if (e.target.className === 'fas fa-times') {
-        e.target.parentElement.parentElement.remove();
+        e.target.parentElement.parentElement.parentElement.remove();
 
-        deleteItemFromLS(e.target.parentElement.parentElement.textContent);
+        deleteItemFromLS(e.target.parentElement.parentElement.parentElement.textContent);
     }
 }
 //Delete all items
