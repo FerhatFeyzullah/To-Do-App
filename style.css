@@ -2,9 +2,7 @@
     font-size: 25px;
 }
 
-.task-list {
+.task-list me-2 {
     margin-right: 5px;
     margin-left: 5px;
-    align-items: end;
-    float: right;
 }
